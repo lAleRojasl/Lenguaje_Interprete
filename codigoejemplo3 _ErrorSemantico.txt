@@ -1,0 +1,31 @@
+::Codigo ejemplo 3 (Correcto) 
+::Programa para contar cuantas iteraciones de numeros aleatorios deben ocurrir
+::antes de llegar al numero esperado. iter_random(1,10) con valorEsperado=4 genera aleatorios de 1 a 10
+::hasta llegar generar el valor 4.
+
+::Asignaciones
+valorEsperado = 0;
+aleatorio = 0;
+contador = 0;
+
+func iter_random(x, y){
+	print("Ingrese el valor a encontrar: ");	
+	valorEsperado = toInt(read());
+	if(x <= valorEsperado and valorEsperado <= y){
+		aleatorio = rand(x, y);
+		while(valorEsperado != aleatorio){
+			aleatorio = rand(x, y);
+			print(" ");
+			print("Num "+aleatorio);
+			contador += 1;
+		}
+	}
+	else{ 
+		print("El valor debe estar en el rango ingresado");
+		return false;
+	}
+	print("\nSe necesitaron " + toStr(contador) + " iteraciones para encontrar el valor.");
+	return true;
+}
+
+iter_random(1, 100);

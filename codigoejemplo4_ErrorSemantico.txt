@@ -1,0 +1,16 @@
+::Codigo ejemplo 4 (Correcto)
+::Programa para eliminar valores por debajo de 70 en una lista de notas.
+nts = 0;
+
+func aprovados(input_list){
+	ordenar = sortAsc(10);
+	for nts in input_list{
+		if(nts <= 70){
+			pop(input_list);
+		}
+	}
+	return input_list;
+}
+
+finList = aprovados([15,73,84,76]);
+print("Lista Final: "+ toStr(finList));

@@ -1,0 +1,27 @@
+::Codigo prueba  1 (Correcto) 
+::Programa para calcular promedio de notas de estudiantes
+
+::Asignaciones
+listaNotas = [];
+entradaNotas = "";
+tempNota = "";
+ct = "";
+
+func  calcPromedio (){
+	entradaNotas = read("Ingrese las notas separadas por comas: ");
+	for ct in entradaNotas{
+		if(ct == ","){
+			push(listaNotas);
+			tempNota = "";
+		}
+		else{
+			tempNota += ct;
+		}
+	}
+	if (tempNota != ""){
+		push(listaNotas, toInt(tempNota));
+	}
+	return promList(listaNotas);
+}
+
+print("El promedio de las notas ingresadas es: " + toStr(calcPromedio()));

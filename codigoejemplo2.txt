@@ -1,0 +1,66 @@
+::Codigo correcto 2  
+::Programa para manejo de un sistema de login y manejo de usuarios sencillo. 
+
+::Asignaciones
+Usuarios = ["usr1", "usr2"];
+usr = "c";
+Administradores = ["admin1"];
+
+
+func  check_login (){
+	print("Ingrese su nombre de usuario: ");	
+	usr = read();
+	busqueda = search(Administradores, usr);
+	if (busqueda == true){
+		print("Bienvenido Admin");
+		admin_logged = true;
+	}
+	else{
+		busqueda2 = search(Usuarios, usr);
+		if(busqueda2 == true){
+			print("Bienvenido Usuario");
+			admin_logged = false;
+		}
+		else{
+			print("Usuario no encontrado");
+			admin_logged = false;
+		}
+	}
+return admin_logged;
+}
+
+func hacer_Admin(admin_logged){
+	if(admin_logged){	
+		print("\nUsuario que desea promover a Administrador: ");
+		usr = read();
+		if(search(Usuarios, usr) == true){
+			push(Administradores, usr);
+			print("Usuario " + usr + " es ahora administrador");
+			delete(Usuarios, usr);
+		}
+		else{
+			print("Usuario no encontrado");
+		}
+	}
+	else{
+		print("Acceso denegado, debe ser administrados para realizar esta accion");
+	}
+return true;
+}
+
+func agrega_usuario(admin_logged){
+	if(admin_logged){	
+		print("\nIngrese nombre de usuario: ");
+		usr = read();
+		push(Usuarios, usr);
+		print("Usuario agregado con exito");
+	}
+	else{
+		print("Acceso denegado, debe ser administrados para realizar esta accion");
+	}
+return true;
+}
+
+
+hacer_Admin(check_login());
+::agrega_usuario(check_login());
