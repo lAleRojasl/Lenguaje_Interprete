@@ -9,7 +9,7 @@ aleatorio = 0;
 contador = 0;
 
 func iter_random(x, y){
-	print("Ingrese el valor a encontrar: ");	
+	print("Ingrese un valor de 1 a 1000: ");	
 	valorEsperado = toInt(read());
 	if(x <= valorEsperado and valorEsperado <= y){
 		aleatorio = rand(x, y);

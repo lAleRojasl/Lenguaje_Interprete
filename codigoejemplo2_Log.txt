@@ -1,0 +1,66 @@
+================================================== == Arbol sintactico ====================================================
+
+[<Assignment sym=<Identifier name=Usuarios line=5>; val=<Array len=2 items=<InstructionList [<Primitive "usr1"(<class 'str'>)>, <Primitive "usr2"(<class 'str'>)>]>> line=0>,
+ <Assignment sym=<Identifier name=usr line=6>; val=<Primitive "c"(<class 'str'>)> line=0>,
+ <Assignment sym=<Identifier name=Administradores line=7>; val=<Array len=1 items=<InstructionList [<Primitive "admin1"(<class 'str'>)>]>> line=0>,
+ <Assignment sym=<Identifier name=check_login line=10>; val=<Function params=<InstructionList []> body=<InstructionList [<Print <InstructionList [<Primitive "Ingrese su nombre de usuario: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=11>; val=<Function call name=<Identifier name=read line=11> params=<InstructionList []> line=11> line=0>, <Assignment sym=<Identifier name=busqueda line=12>; val=<Function call name=<Identifier name=search line=12> params=<InstructionList [<Identifier name=Administradores line=12>, <Identifier name=usr line=12>]> line=12> line=0>, <If condition=<BinaryOperation left =<Identifier name=busqueda line=13> right=<Primitive "True"(<class 'bool'>)> operation="==" line=13> then=<InstructionList [<Print <InstructionList [<Primitive "Bienvenido Admin"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=15>; val=<Primitive "True"(<class 'bool'>)> line=0>]> else=<InstructionList [<Assignment sym=<Identifier name=busqueda2 line=18>; val=<Function call name=<Identifier name=search line=18> params=<InstructionList [<Identifier name=Usuarios line=18>, <Identifier name=usr line=18>]> line=18> line=0>, <If condition=<BinaryOperation left =<Identifier name=busqueda2 line=19> right=<Primitive "True"(<class 'bool'>)> operation="==" line=19> then=<InstructionList [<Print <InstructionList [<Primitive "Bienvenido Usuario"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=21>; val=<Primitive "False"(<class 'bool'>)> line=0>]> else=<InstructionList [<Print <InstructionList [<Primitive "Usuario no encontrado"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=25>; val=<Primitive "False"(<class 'bool'>)> line=0>]>>]>>, <Return expr=<Identifier name=admin_logged line=28>>]>> line=10>,
+ <Assignment sym=<Identifier name=hacer_Admin line=31>; val=<Function params=<InstructionList [<Identifier name=admin_logged line=31>]> body=<InstructionList [<If condition=<Identifier name=admin_logged line=32> then=<InstructionList [<Print <InstructionList [<Primitive "
+Usuario que desea promover a Administrador: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=33>; val=<Function call name=<Identifier name=read line=33> params=<InstructionList []> line=33> line=0>, <If condition=<BinaryOperation left =<Function call name=<Identifier name=search line=34> params=<InstructionList [<Identifier name=Usuarios line=34>, <Identifier name=usr line=34>]> line=34> right=<Primitive "True"(<class 'bool'>)> operation="==" line=34> then=<InstructionList [<Function call name=<Identifier name=push line=35> params=<InstructionList [<Identifier name=Administradores line=35>, <Identifier name=usr line=35>]> line=35>, <Print <InstructionList [<BinaryOperation left =<BinaryOperation left =<Primitive "Usuario "(<class 'str'>)> right=<Identifier name=usr line=36> operation="+" line=36> right=<Primitive " es ahora administrador"(<class 'str'>)> operation="+" line=36>]>>, <Function call name=<Identifier name=delete line=37> params=<InstructionList [<Identifier name=Usuarios line=37>, <Identifier name=usr line=37>]> line=37>]> else=<InstructionList [<Print <InstructionList [<Primitive "Usuario no encontrado"(<class 'str'>)>]>>]>>]> else=<InstructionList [<Print <InstructionList [<Primitive "Acceso denegado, debe ser administrados para realizar esta accion"(<class 'str'>)>]>>]>>, <Return expr=<Primitive "True"(<class 'bool'>)>>]>> line=31>,
+ <Assignment sym=<Identifier name=agrega_usuario line=49>; val=<Function params=<InstructionList [<Identifier name=admin_logged line=49>]> body=<InstructionList [<If condition=<Identifier name=admin_logged line=50> then=<InstructionList [<Print <InstructionList [<Primitive "
+Ingrese nombre de usuario: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=51>; val=<Function call name=<Identifier name=read line=51> params=<InstructionList []> line=51> line=0>, <Function call name=<Identifier name=push line=52> params=<InstructionList [<Identifier name=Usuarios line=52>, <Identifier name=usr line=52>]> line=52>, <Print <InstructionList [<Primitive "Usuario agregado con exito"(<class 'str'>)>]>>]> else=<InstructionList [<Print <InstructionList [<Primitive "Acceso denegado, debe ser administrados para realizar esta accion"(<class 'str'>)>]>>]>>, <Return expr=<Primitive "True"(<class 'bool'>)>>]>> line=49>,
+ <Function call name=<Identifier name=hacer_Admin line=62> params=<InstructionList [<Function call name=<Identifier name=check_login line=62> params=<InstructionList []> line=62>]> line=62>]
+
+
+================================================== == Tabla de Simbolos ====================================================
+
+{'functions': {'abs': <Builtin function <built-in function abs>>,
+               'agrega_usuario': <Function params=<InstructionList [<Identifier name=admin_logged line=49>]> body=<InstructionList [<If condition=<Identifier name=admin_logged line=50> then=<InstructionList [<Print <InstructionList [<Primitive "
+Ingrese nombre de usuario: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=51>; val=<Function call name=<Identifier name=read line=51> params=<InstructionList []> line=51> line=0>, <Function call name=<Identifier name=push line=52> params=<InstructionList [<Identifier name=Usuarios line=52>, <Identifier name=usr line=52>]> line=52>, <Print <InstructionList [<Primitive "Usuario agregado con exito"(<class 'str'>)>]>>]> else=<InstructionList [<Print <InstructionList [<Primitive "Acceso denegado, debe ser administrados para realizar esta accion"(<class 'str'>)>]>>]>>, <Return expr=<Primitive "True"(<class 'bool'>)>>]>>,
+               'atan': <Builtin function <built-in function atan>>,
+               'check_login': <Function params=<InstructionList []> body=<InstructionList [<Print <InstructionList [<Primitive "Ingrese su nombre de usuario: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=11>; val=<Function call name=<Identifier name=read line=11> params=<InstructionList []> line=11> line=0>, <Assignment sym=<Identifier name=busqueda line=12>; val=<Function call name=<Identifier name=search line=12> params=<InstructionList [<Identifier name=Administradores line=12>, <Identifier name=usr line=12>]> line=12> line=0>, <If condition=<BinaryOperation left =<Identifier name=busqueda line=13> right=<Primitive "True"(<class 'bool'>)> operation="==" line=13> then=<InstructionList [<Print <InstructionList [<Primitive "Bienvenido Admin"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=15>; val=<Primitive "True"(<class 'bool'>)> line=0>]> else=<InstructionList [<Assignment sym=<Identifier name=busqueda2 line=18>; val=<Function call name=<Identifier name=search line=18> params=<InstructionList [<Identifier name=Usuarios line=18>, <Identifier name=usr line=18>]> line=18> line=0>, <If condition=<BinaryOperation left =<Identifier name=busqueda2 line=19> right=<Primitive "True"(<class 'bool'>)> operation="==" line=19> then=<InstructionList [<Print <InstructionList [<Primitive "Bienvenido Usuario"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=21>; val=<Primitive "False"(<class 'bool'>)> line=0>]> else=<InstructionList [<Print <InstructionList [<Primitive "Usuario no encontrado"(<class 'str'>)>]>>, <Assignment sym=<Identifier name=admin_logged line=25>; val=<Primitive "False"(<class 'bool'>)> line=0>]>>]>>, <Return expr=<Identifier name=admin_logged line=28>>]>>,
+               'cos': <Builtin function <class 'int'>>,
+               'count': <Builtin function <function count at 0x000002155BDE8D90>>,
+               'delete': <Builtin function <function delete at 0x000002155BDE8B70>>,
+               'format': <Builtin function <function str_format at 0x000002155BDE8950>>,
+               'hacer_Admin': <Function params=<InstructionList [<Identifier name=admin_logged line=31>]> body=<InstructionList [<If condition=<Identifier name=admin_logged line=32> then=<InstructionList [<Print <InstructionList [<Primitive "
+Usuario que desea promover a Administrador: "(<class 'str'>)>]>>, <Assignment sym=<Identifier name=usr line=33>; val=<Function call name=<Identifier name=read line=33> params=<InstructionList []> line=33> line=0>, <If condition=<BinaryOperation left =<Function call name=<Identifier name=search line=34> params=<InstructionList [<Identifier name=Usuarios line=34>, <Identifier name=usr line=34>]> line=34> right=<Primitive "True"(<class 'bool'>)> operation="==" line=34> then=<InstructionList [<Function call name=<Identifier name=push line=35> params=<InstructionList [<Identifier name=Administradores line=35>, <Identifier name=usr line=35>]> line=35>, <Print <InstructionList [<BinaryOperation left =<BinaryOperation left =<Primitive "Usuario "(<class 'str'>)> right=<Identifier name=usr line=36> operation="+" line=36> right=<Primitive " es ahora administrador"(<class 'str'>)> operation="+" line=36>]>>, <Function call name=<Identifier name=delete line=37> params=<InstructionList [<Identifier name=Usuarios line=37>, <Identifier name=usr line=37>]> line=37>]> else=<InstructionList [<Print <InstructionList [<Primitive "Usuario no encontrado"(<class 'str'>)>]>>]>>]> else=<InstructionList [<Print <InstructionList [<Primitive "Acceso denegado, debe ser administrados para realizar esta accion"(<class 'str'>)>]>>]>>, <Return expr=<Primitive "True"(<class 'bool'>)>>]>>,
+               'insert': <Builtin function <function insert at 0x000002155BDE8AE8>>,
+               'len': <Builtin function <built-in function len>>,
+               'length': <Builtin function <function length at 0x000002155BDE8E18>>,
+               'log': <Builtin function <built-in function log>>,
+               'log2': <Builtin function <built-in function log>>,
+               'lower': <Builtin function <method 'lower' of 'str' objects>>,
+               'maxArg': <Builtin function <function maxArg at 0x000002155BDEA268>>,
+               'maxList': <Builtin function <function maxList at 0x000002155BDE8F28>>,
+               'minArg': <Builtin function <function minArg at 0x000002155BDEA1E0>>,
+               'minList': <Builtin function <function minList at 0x000002155BDE8EA0>>,
+               'ord': <Builtin function <built-in function ord>>,
+               'pop': <Builtin function <function pop at 0x000002155BDE8A60>>,
+               'pos': <Builtin function <function str_pos at 0x000002155BDDD6A8>>,
+               'prom': <Builtin function <function prom at 0x000002155BDEA158>>,
+               'promList': <Builtin function <function promList at 0x000002155BDEA0D0>>,
+               'push': <Builtin function <function push at 0x000002155BDE89D8>>,
+               'rand': <Builtin function <bound method Random.randint of <random.Random object at 0x000002155BC00AD8>>>,
+               'randrange': <Builtin function <bound method Random.randrange of <random.Random object at 0x000002155BC00AD8>>>,
+               'read': <Builtin function <built-in function input>>,
+               'replace': <Builtin function <method 'replace' of 'str' objects>>,
+               'reverse': <Builtin function <function reverse at 0x000002155BDE8BF8>>,
+               'round': <Builtin function <built-in function round>>,
+               'search': <Builtin function <function search at 0x000002155BDEA048>>,
+               'sin': <Builtin function <class 'int'>>,
+               'sortAsc': <Builtin function <function sortAsc at 0x000002155BDE8C80>>,
+               'sortDesc': <Builtin function <function sortDesc at 0x000002155BDE8D08>>,
+               'substr': <Builtin function <function substr at 0x000002155BDDD488>>,
+               'tan': <Builtin function <built-in function tan>>,
+               'time': <Builtin function <built-in function time>>,
+               'toChr': <Builtin function <built-in function chr>>,
+               'toFloat': <Builtin function <function toFloat at 0x000002155BDEA378>>,
+               'toInt': <Builtin function <function toInt at 0x000002155BDEA2F0>>,
+               'toStr': <Builtin function <function toStr at 0x000002155BDEA400>>,
+               'upper': <Builtin function <method 'upper' of 'str' objects>>},
+ 'local': [],
+ 'symbols': {'Administradores': ['admin1'],
+             'Usuarios': ['usr1', 'usr2'],
+             'e': 2.718281828459045,
+             'pi': 3.141592653589793,
+             'usr': 'c'}}
